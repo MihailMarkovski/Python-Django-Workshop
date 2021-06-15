@@ -1,0 +1,45 @@
+
+.pet-info .pet-image {
+    padding: 15px;
+    display: inline-block;
+}
+
+
+.pet-image {
+    width: 33%;
+    margin-top: 37px;
+
+
+}
+
+
+.pet-info {
+    margin-left: 407px;
+    margin-top: -206px;
+}
+
+button {
+    margin-block: 15px;
+}
+
+.details-list-pets{
+    font-weight: 500;
+
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.details-list-pets .list-item {
+    width: 32%;
+}
+
+.likes-count-item{
+    font-weight: 500;
+}
+
+p {
+    margin-top: 23px;
+
+}

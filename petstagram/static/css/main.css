@@ -1,0 +1,93 @@
+body{
+        /*background-image: url("/static/img/pet-paw-print-ink-background-step-and-repeat-backdrops-photography-backdrops-sh19013.png");*/
+    font-size: 16px;
+}
+
+section header {
+    border-bottom: 1px solid currentColor;
+    margin: 11px;
+    padding: 25px 0;
+
+}
+
+.list-horizontal .list-item{
+    display: inline-block;
+    border-bottom: none;
+
+}
+
+.row {
+    display: flex;
+
+}
+
+
+.row .col {
+    flex: 50% ;
+    margin-left: 10%;
+
+}
+
+* button {
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-style: none;
+    font-size: 16px;
+}
+
+* button:hover {
+    color: #fff;
+    background-color: #74fff3;
+    border-color: #545b62;
+    cursor: pointer;
+
+}
+
+.site-nav{
+    background-color: rgb(248, 249, 250);
+
+}
+
+.site-nav .list-item{
+    padding: 10px 10px;
+}
+
+.site-nav .list-item:first-of-type {
+    margin-left: 10px ;
+
+}
+
+.site-nav .list-item:hover {
+    color: #fff;
+    background-color: #74fff3;
+    border-color: #545b62;
+}
+
+.banner {
+    background-image: url("/static/img/animals.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #e9ecef;
+    background-size: 900px;
+    height: 200px;
+
+    padding: 300px 15px 15px 15px;
+    margin-top: 2%;
+
+}
+
+/*.banner:before {*/
+/*    */
+/*}*/
+
+
+#root {
+    width: 1046px;
+    margin: 0 auto;
+
+
+}
+
