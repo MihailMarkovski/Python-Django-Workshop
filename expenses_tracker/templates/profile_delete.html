@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Expenses Tracker</title>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li class="img"><img src="/static/images/dollar.png"></li>
+        <li><a href="/">Expenses Tracker Home Page</a></li>
+
+        <li class="right"><a href="/profile">Profile</a></li>
+
+    </ul>
+</nav>
+<div class="body">
+    <h1>Are you sure you want to delete your profile?</h1>
+    <div class="form">
+        <form method="POST" action="{% url 'delete profile' %}">
+
+            {{ form.first_name.label }}
+            {{ form.first_name }}
+            {{ form.last_name.label }}
+            {{ form.last_name }}
+            {{ form.budget.label }}
+            {{ form.budget }}
+            {% csrf_token %}
+            <button class="delete">Confirm</button>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
+</html>
