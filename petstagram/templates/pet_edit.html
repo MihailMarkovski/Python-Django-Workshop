@@ -9,7 +9,7 @@
                 {{ form }}
                 {% csrf_token %}
 
-                <img id="img_preview" src="{{ pet.image_url }}" class="w-50 rounded mx-auto d-block"
+                <img id="img_preview" src="{{ pet.image_url.url }}" class="w-50 rounded mx-auto d-block"
                      alt="{{ pet.name }} Image:"/>
 
                 <button class="btn btn-primary mt-2" type="submit">Edit</button>

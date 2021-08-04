@@ -20,6 +20,6 @@ class PetForm(forms.ModelForm):
             'image_url': forms.TextInput(
                 attrs={
                     'id': 'img_input'
-                }
+                },
             )
         }

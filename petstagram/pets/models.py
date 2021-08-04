@@ -2,18 +2,20 @@ from django.db import models
 
 
 # Create your models here.
-
+from functions.clean_up import clean_up_files
 
 
 class Pet(models.Model):
     DOG = 'dog'
     CAT = 'cat'
     PARROT = 'parrot'
+    RABBIT = 'rabbit'
     UNKNOWN = 'unknown'
     PET_TYPES = [
         [DOG, 'Dog'],
         [CAT, 'Cat'],
         [PARROT, 'Parrot'],
+        [RABBIT, 'Rabbit'],
         [UNKNOWN, 'Unknown'],
 
     ]
@@ -22,7 +24,7 @@ class Pet(models.Model):
     name = models.CharField(max_length=15, blank=False)
     age = models.IntegerField(blank=False)
     description = models.TextField(blank=False)
-    image_url = models.URLField()
+    image_url = models.ImageField(upload_to='images')
 
     def __str__(self):
         return f'ID: {self.id}, NAME: {self.name}'

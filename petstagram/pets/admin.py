@@ -7,6 +7,7 @@ from pets.models import Pet, Like, Comment
 class LikeInline(admin.TabularInline):
     model = Like
 
+#filtering by name and age in the panel
 class PetAdmin(admin.ModelAdmin):
     list_display = ['id', 'type', 'name', 'age']
     list_filter = ['type', 'age']

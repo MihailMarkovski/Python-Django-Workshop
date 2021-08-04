@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-
+from functions.clean_up import clean_up_files
 from pets.forms.comment_form import CommentForm
 
 from pets.forms.pet_form import PetForm
@@ -27,7 +27,7 @@ def create_pet(request):
 
         return render(request, 'pet_create.html', context)
     else:
-        form = PetForm(request.POST, instance=pet)
+        form = PetForm(request.POST, request.FILES, instance=pet)
         if form.is_valid():
             form.save()
             return redirect('pets list')
@@ -92,8 +92,10 @@ def edit_pet(request, pk):
         return render(request, 'pet_edit.html', context)
 
     else:
-        form = PetForm(request.POST, instance=pet)
+        old_img = pet.image_url
+        form = PetForm(request.POST, request.FILES, instance=pet)
         if form.is_valid():
+            clean_up_files(old_img.path)
             form.save()
 
             return redirect('pet details or comment', pet.pk)
