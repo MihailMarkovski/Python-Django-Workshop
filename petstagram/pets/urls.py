@@ -2,6 +2,8 @@ from django.urls import path
 
 from pets import views
 
+
+
 urlpatterns = [
     path('', views.pets_list, name='pets list'),
     path('create/', views.create_pet, name='create pet'),

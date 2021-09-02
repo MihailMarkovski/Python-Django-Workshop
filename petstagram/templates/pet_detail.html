@@ -9,13 +9,25 @@
                 <h5><u>Type:</u> {{ pet.type }}</h5>
                 <h5><u>Name:</u> {{ pet.name }}</h5>
                 <h5><u>Age:</u> {{ pet.age }}</h5>
+                <h5><u>Owner:</u> {{ pet.user.user.username }}</h5>
             </div>
             <p class="mt-2">Description: {{ pet.description }}</p>
             <div>
-                <a href="{% url 'edit pet' pet.pk %}" class="btn btn-success">Edit</a>
-                <a href="{% url 'delete pet' pet.pk %}" class="btn btn-danger">Delete</a>
+                {% if can_edit %}
+                    <a href="{% url 'edit pet' pet.pk %}" class="btn btn-success">Edit</a>
+                {% endif %}
+                {% if can_delete %}
+                    <a href="{% url 'delete pet' pet.pk %}" class="btn btn-danger">Delete</a>
+                {% endif %}
             </div>
-            <a href="{% url 'like pet' pet.id %}">Send to {{ pet.name }} your Love: <i class="fa fa-heart-o" aria-hidden="true"></i></a>
+            {% if can_like %}
+                {% if not has_liked %}
+                    <a href="{% url 'like pet' pet.id %}">Send to {{ pet.name }} your Love: <i class="fa fa-heart-o"aria-hidden="true"></i></a>
+
+                {% else %}
+                     <a href="{% url 'like pet' pet.id %}"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                {% endif %}
+            {% endif %}
             <p class="mt-2">Likes: {{ pet.like_set.count }}</p>
         </div>
     </div>
